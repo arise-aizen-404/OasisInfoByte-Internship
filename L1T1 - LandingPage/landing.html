@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 5px;
+        padding: 0;
+        border-radius: 8px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      body{
+        background-color: #081b29;
+        color: white;
+      }
+      img {
+        background-size: cover;
+        height: 40vh;
+        width: 100%;
+      }
+      .imgtxt {
+        position: absolute;
+        top: 1%;
+        right: 3%;
+        font-size: 29px;
+        font-weight: bold;
+        text-shadow: 0 2px 3px red;
+      }
+      .align {
+        position: absolute;
+        top: 10%;
+        right: 6%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 25px;
+        font-weight: bold;
+      }
+      .align button {
+        padding: 7px;
+        border-radius: 10px;
+        background-color: greenyellow;
+        font-weight: bold;
+        cursor: pointer;
+        margin: 0 8px;
+      }
+      label {
+        margin: 0 3px;
+      }
+      .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        padding: 10px;
+        gap: 8px;
+      }
+      .quality {
+        display: grid;
+        grid-template-columns: auto auto;
+        padding: 12px;
+        gap: 8px;
+      }
+      .texts {
+        padding: 30px;
+      }
+      .item2{
+        border: 1px solid black;
+        padding:5px;
+        border-radius: 5px;;
+      }
+      .item:hover {
+        transform: scale(1.1);
+      }
+      figcaption {
+        text-align: center;
+        font-weight: bolder;
+        font-size: x-large;
+      }
+      .item button {
+        margin: 1% 35%;
+        padding: 7px;
+        border-radius: 10px;
+        background-color: greenyellow;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .item span,
+      del {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: large;
+        font-weight: bold;
+      }
+      .foot{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+      }
+      .foot button{
+        padding: 7px;
+        border-radius: 10px;
+        background-color: greenyellow;
+        font-weight: bold;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img src="summer.jpg" alt="" />
+      <h1 class="imgtxt">HurryUp Summer Sale!!!</h1>
+      <div class="align">
+        <form>
+          <label>Login</label>
+          <label>Sign Up</label><br />
+          <button>Login</button>
+          <button>SignUp</button>
+        </form>
+      </div>
+    </header>
+    <h1 align="middle"><u>Our Products</u></h1>
+    <div class="grid-container">
+      <div class="item">
+        <img src="table.jpg" alt="" />
+        <figcaption>Coffee table</figcaption>
+        <span>&#8377;4999 &nbsp; <del>&#8377;10000</del> </span>
+        <button>Buy Now</button>
+      </div>
+      <div class="item">
+        <img src="dining.png" alt="" />
+        <figcaption>Dinning Table</figcaption>
+        <span>&#8377;8999 &nbsp;<del>&#8377;18000</del> </span>
+        <button>Buy Now</button>
+      </div>
+      <div class="item">
+        <img src="sofa.jpeg" alt="" />
+        <figcaption>Sofa Set</figcaption>
+        <span>&#8377;5999 &nbsp;<del>&#8377;12000</del> </span>
+        <button>Buy Now</button>
+      </div>
+    </div>
+    <div class="quality">
+      <div class="item1 texts">
+        <h1>Quality:</h1>
+        We understand that quality is the foundation of a great product. We
+        meticulously curate our selection, sourcing only from reputable and
+        trusted suppliers who share our commitment to excellence. Our rigorous
+        quality control measures guarantee that every item meets the highest
+        standards before it reaches your hands.........
+      </div>
+      <div class="item1"><img src="quality.jpg" /></div>
+    </div>
+    <div class="quality">
+      <div class="item1"><img src="location.jpg" /></div>
+      <div class="item1 texts">
+        <h1>Locations:</h1>
+        We are delighted to have multiple store locations for your convenience.
+        We strive to bring our exceptional products closer to you, ensuring a
+        seamless and enjoyable shopping experience...........
+      </div>
+    </div>
+    <div class="quality">
+      <div class="item1 texts">
+        <h1>More About Us:</h1>
+        We understand that quality is the foundation of a great product. We
+        meticulously curate our selection, sourcing only from reputable and
+        trusted suppliers who share our commitment to excellence. Our rigorous
+        quality control measures guarantee that every item meets the highest
+        standards before it reaches your hands.........
+      </div>
+      <div class="item1"><img src="all.jpg" /></div>
+    </div>
+    <footer>
+      <div class="grid-container">
+        <div class="item2">
+          <b> Unbeatable Discounts:</b><br />
+          Dive into the season with our exceptional discounts on a wide range of
+          furniture pieces. From sofas and dining sets to bedroom essentials and
+          outdoor furniture, you'll find irresistible deals that make it the
+          perfect time to revamp your home.
+        </div>
+        <div class="item2">
+          <b>Refresh Your Space:</b> <br />Embrace the sunny vibes of summer by
+          infusing your living spaces with fresh and trendy furniture pieces.
+          Discover a vast selection of styles, from contemporary to classic,
+          ensuring you'll find the perfect match for your unique taste and
+          aesthetic preferences.
+        </div>
+        <div class="item2">
+          <b>Quality That Lasts:</b><br />
+          Our commitment to quality extends to our summer sale offerings. Rest
+          assured, every piece of furniture featured in our sale is crafted with
+          the utmost attention to detail, using durable materials that withstand
+          the test of time. Enjoy style and longevity in one unbeatable package.
+        </div>
+      </div>
+      <div class="foot"><b>Visit our home page for more choices......</b><button class="contact">Click Here</button></div>
+    </footer>
+  </body>
+</html>
