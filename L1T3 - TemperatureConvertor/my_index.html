@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Convertor</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      body {
+        height: 100vh;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #081b29;
+      }
+      .container {
+        background-color: #f5f5f5;
+        padding: 20px;
+        max-width: 80%;
+        border-radius: 8px;
+        /* text-align: left; */
+      }
+      input {
+        display: block;
+        margin: 10px auto;
+        padding: 10px;
+        width: 100%;
+        font-size: 18px;
+        border: none;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.7);
+        background-color: inherit;
+      }
+      input:focus {
+        outline: none;
+      }
+      h2 {
+        color: #000;
+        margin: 10px;
+      }
+      label {
+        display: block;
+        margin: 20px 10px 10px 10px;
+        color: rgba(0, 0, 0, 0.7);
+      }
+      div.result {
+        margin: 10px;
+      }
+      .result > p:first-of-type {
+        color: rgba(0, 0, 0, 0.7);
+      }
+      button {
+        width: 100%;
+        /* margin: 10px; */
+        padding: 10px 20px;
+        border-radius: 8px;
+        background: linear-gradient(
+          to top right,
+          rgb(74, 74, 243),
+          rgb(24, 184, 237)
+        );
+        border: none;
+        color: #f5f5f5;
+        font-weight: bold;
+        font-size: 18px;
+      }
+      button:hover {
+        background: linear-gradient(
+          to top right,
+          rgb(24, 184, 237),
+          rgb(74, 74, 243)
+        );
+        cursor: pointer;
+      }
+      #convertor-result {
+        height: 50px;
+        margin: 10px auto;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.7);
+        /* background-color: #c2c2c2; */
+      }
+      input:invalid {
+        outline: red;
+      }
+    </style>
+    <script>
+        // document.querySelector(".btn").addEventListener("click",convertTemp());
+        const convertTemp = () => {
+          let inputDegrees = document.getElementById("degrees").value;
+          console.log(inputDegrees);
+          let input = document.getElementById("input").value;
+        const inputValue = inputDegrees;
+        const inputType = input;
+        console.log(inputValue);
+        console.log(inputType);
+        if (inputType == "Fahrenheit") {
+          const x = (inputValue - 32) * (5 / 9);
+          const y = (inputValue - 32) * (5 / 9) + 273.15;
+          document.getElementById("convertor-result").innerHTML =
+            "Celsius = " + x + "\u00B0C\nKelvin = " + y + "K";
+        } else if (inputType == "Celsius") {
+          const x = inputValue * (9 / 5) + 32;
+          const y = parseFloat(inputValue) + 273.15;
+          document.getElementById("convertor-result").innerHTML =
+            "Farenheit = " + x + "F\nKelvin = " + y + "K";
+        } else {
+          const x = parseFloat(inputValue) - 273.15;
+          const y = (inputValue - 273.15) * (9 / 5) + 32;
+          document.getElementById("convertor-result").innerHTML =
+            "Celsius = " + x + "\u00B0C\nFarenheit = " + y + "F";
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Temperator Convertor</h2>
+      <label>Degrees : </label>
+      <input id="degrees" type="number" />
+      <label id="type">Type :</label>
+      <input list="types" id="input" />
+      <datalist id="types">
+        <option id="op1" value="Fahrenheit"></option>
+        <option id="op2" value="Celsius"></option>
+        <option id="op3" value="Kelvin"></option>
+      </datalist>
+      <div class="result">
+        <p>Result :</p>
+        <p id="convertor-result"></p>
+      </div>
+      <button onclick="convertTemp()" class="btn">Convert</button>
+    </div>
+  </body>
+</html>
