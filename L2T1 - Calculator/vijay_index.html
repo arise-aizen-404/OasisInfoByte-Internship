@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Browser</title>
+    <style>
+      * {
+        font-weight: bold;
+        font-size: large;
+      }
+      body {
+        display: flex;
+        align-items: center;
+        position: relative;
+        justify-content: center;
+        min-height: 100vh;
+        background-color: rgb(91, 91, 232);
+      }
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+        background-color: rgba(0, 0, 0, 0.5);
+        background: #00c8ff;
+        border-radius: 20px;
+        padding: 20px;
+        margin: 0 auto;
+      }
+      .grid-container {
+        margin: 0 auto;
+        width: 100%; /* Adjusted width to be 100% */
+        display: grid;
+        grid-template-columns: auto auto auto auto auto;
+        background-color: #2196f3;
+      }
+      .grid-item {
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        padding: 20px;
+        font-size: 30px;
+        text-align: center;
+        cursor: pointer;
+      }
+      .item1 {
+        grid-column-start: span 2;
+      }
+      .item3 {
+        grid-column-start: span 3;
+      }
+      .item2 {
+        grid-column-start: span 5;
+      }
+      .item {
+        background-color: bisque;
+      }
+      @media (max-width: 768px) {
+        .container {
+          width: 80%; 
+        }
+        .grid-container {
+          width: 100%;
+        }
+      }
+    </style>
+    <script>
+      let exp;
+      function display(val) {
+        exp=document.getElementById("displayItem").value += val;
+    
+      }
+      function deletion() {
+       exp= exp.slice(0, -1);
+        document.getElementById("displayItem").value=exp;
+      }
+      const clearDisplay=()=>{
+        exp='';
+        document.getElementById("displayItem").value=exp;
+        
+      }
+      const solve=()=>{
+        try {
+            document.getElementById("displayItem").value=eval(exp);
+        }
+        catch(err) {
+            document.getElementById("displayItem").value="Invalid Expression";
+        }
+       
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="grid-container">
+        <input type="text" class="grid-item item2" id="displayItem"></input>
+        <button class="grid-item item" onclick="display('\u0028')">(</button>
+        <button class="grid-item item" onclick="display('\u0029')">)</button>
+        <button class="grid-item item item1" onclick="clearDisplay()">Cls</button>
+        <button class="grid-item item" onclick="deletion()">del</button>
+        <button class="grid-item" onclick="display('7')">7</button>
+        <button class="grid-item" onclick="display('8')">8</button>
+        <button class="grid-item" onclick="display('9')">9</button>
+        <button class="grid-item item" onclick="display('%')">%</button>
+        <button class="grid-item item" onclick="display('**')">^</button>
+        <button class="grid-item" onclick="display('4')">4</button>
+        <button class="grid-item" onclick="display('5')">5</button>
+        <button class="grid-item" onclick="display('6')">6</button>
+        <button class="grid-item item" onclick="display('*')">X</button>
+        <button class="grid-item item" onclick="display('/')">/</button>
+        <button class="grid-item" onclick="display('1')">1</button>
+        <button class="grid-item" onclick="display('2')">2</button>
+        <button class="grid-item" onclick="display('3')">3</button>
+        <button class="grid-item item" onclick="display('+')">+</button>
+        <button class="grid-item item" onclick="display('-')">-</button>
+        <button class="grid-item" onclick="display('.')">.</button>
+        <button class="grid-item" onclick="display('0')">0</button>
+        <button class="grid-item item3 item" onclick="solve()">=</button>
+      </div>
+    </div>
+  </body>
+</html>

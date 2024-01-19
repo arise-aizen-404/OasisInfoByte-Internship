@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: #c3e8ff;
+            max-width: calc(100%-20px);
+            height: 100vh;
+            color: #fae8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .container {
+            margin: 0 auto;
+            /* margin-top: 50px; */
+            width: 300px;
+            text-align: center;
+            background-color: rgb(246, 89, 89);
+            padding: 10px;
+            border-radius: 12px;
+        }
+
+        h1 {
+            margin: 10px 0;
+        }
+
+        #screen {
+            width: 100%;
+            height: 70px;
+            margin: 20px 0;
+            border: none;
+            text-align: right;
+            font-size: 1.5rem;
+            padding: 0 10px;
+            line-height: 70px;
+            border-radius: 8px;
+            background-color: #d4d4d4;
+            color: #081b29;
+            box-shadow: inset 5px 5px 15px #ffffff,
+                inset -5px -5px 15px #fff;
+        }
+
+        .keyboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+            gap: 10px;
+        }
+
+        .btn {
+            text-align: center;
+            font-family: 'Arial Narrow Bold', sans-serif;
+            padding: 20px;
+            font-size: 16px;
+            background-color: #D3E6FE;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        .btn:is(:hover, :focus) {
+            cursor: pointer;
+            box-shadow: 3px 3px 6px #dbfa6a,
+                -2px -2px 5px #dbfa6a;
+            transform: scale(1.05);
+        }
+
+        .lgop {
+            grid-row: span 2;
+            color: #081b29;
+            background-color: rgb(89, 208, 248);
+        }
+
+        .lgbtn {
+            grid-column: span 2;
+            color: #081b29;
+            background-color: rgb(112, 251, 112);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Calculator</h1>
+        <div id="screen">0</div>
+        <div class="keyboard"><button class="btn clear">AC</button>
+            <button class="btn del">DEL</button>
+            <button class="btn op">/</button>
+            <button class="btn op">*</button>
+            <button class="btn">7</button>
+            <button class="btn">8</button>
+            <button class="btn">9</button>
+            <button class="btn op">-</button>
+            <button class="btn">6</button>
+            <button class="btn">5</button>
+            <button class="btn">4</button>
+            <button class="btn op">+</button>
+            <button class="btn">1</button>
+            <button class="btn">2</button>
+            <button class="btn">3</button>
+            <button class="btn op lgop">=</button>
+            <button class="btn lgbtn">0</button>
+            <button class="btn">.</button>
+        </div>
+    </div>
+    <script src="scrpt.js">
+        const screenDisplay = document.querySelector("#screen");
+        const buttons = document.querySelectorAll("button");
+        let calculation = [];
+        let accumulativeCalculation;
+
+        function calculate(button) {
+            const value = button.textContent;
+            if (value == "AC") {
+                calculate = [];
+                screenDisplay.textContent = "0";
+            }
+            else if (value == "=") {
+                try {
+                    screenDisplay.textContent = eval(accumulativeCalculation);
+                    calculation = [];
+                    accumulativeCalculation = "";
+                }
+                catch (err) {
+                    screenDisplay.textContent = "Invalid Expression";
+                }
+
+            }
+            else if (value == "DEL") {
+                calculation.slice(0, -1);
+                accumulativeCalculation = accumulativeCalculation.slice(0, -1);
+                screenDisplay.textContent = accumulativeCalculation;
+            }
+            else {
+                calculation.push(value);
+                accumulativeCalculation = calculation.join('');
+                screenDisplay.textContent = accumulativeCalculation;
+            }
+        }
+        buttons.forEach(button => button.addEventListener('click', () => calculate(button)));
+    </script>
+
+</body>
+
+</html>
