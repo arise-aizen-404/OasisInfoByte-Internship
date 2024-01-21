@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background-color: #081b29;
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh; */
+    min-width: 100%;
+    width: 100%;
+}
+.container{
+    background-color: rgb(92, 91, 91);
+    margin: 0 auto;
+    width: 60%;
+    text-align: center;
+    margin-top: 50px;
+    padding: 1rem;
+    border-radius: 16px;
+}
+h1{
+    margin-bottom: 1rem;
+    font-family:'Segoe UI', Tahoma;
+    font-size: 36px;
+    text-shadow: 3px 2px #081b29;
+    color: #f5f5f5;
+}
+input[type="text"]{
+    padding: 10px 20px;
+    border: 2px solid rgb(0, 185, 247);
+    border-radius: 12px;
+    /* width: calc(100%-50px); */
+    width: 80%;
+    margin-bottom: 10px;
+    font-size: 15px;
+    background-color: #f4f4f4;
+}
+input[type="text"]:focus{
+    outline: none;
+    border: 2px solid rgb(250, 97, 97);
+}
+#description{
+    border-radius: 12px;
+    margin-bottom: 10px;
+    width: 80%;
+    height: 80px;
+    font-size: 15px;
+    background-color: #f4f4f4;
+    padding: 10px 20px;
+    border: 2px solid rgb(250, 97, 97);
+}
+#description:is(:focus){
+    outline: none;
+    border: 2px solid rgb(0, 185, 247);
+}
+button#add-btn{
+    color: #081b29;
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 12px;
+    width: 50%;
+    border: none;
+    margin-bottom: 10px;
+    background-color: rgb(250, 97, 97);
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+#add-btn:hover{
+    color:rgb(250, 97, 97);
+    background-color: #f4f4f4;
+}
+#add-btn + p{
+    color: #f5f5f5;
+    font-size: 15px;
+    font-style: italic;
+    letter-spacing: 1px;
+    text-decoration: underline;
+}
+.tasks-container{
+    background-color: darkorange;
+    width: 80%;
+    margin: 20px auto;
+    border-radius: 16px;
+    padding: 1rem;
+}
+ul{
+    list-style: none;
+}
+ul li{
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 2px solid #081b29;
+    border-radius: 12px;
+    margin-bottom: 5px;
+}
+ul li:first-of-type{
+    color: #fff;
+    text-decoration: underline  2px #d5d5d5;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 15px;
+    border-bottom: 2px solid #081b29;
+    margin: 10px 0;
+}
+.delete-btn{
+    padding: 7px 14px;
+    background-color: rgb(97, 255, 100);
+    font-weight: bold;
+    color: #081b29;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 12px;
+    border: none;
+}
+@media (max-width: 500px){
+    .container{
+        width: 90%;
+    }
+    .tasks-container{
+        width: 100%;
+    }
+}
